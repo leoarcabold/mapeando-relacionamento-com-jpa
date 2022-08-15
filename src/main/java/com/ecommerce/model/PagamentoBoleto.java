@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -16,8 +17,13 @@ public class PagamentoBoleto {
     @EqualsAndHashCode.Include
     @Id
     private Long id;
+
     private String status;
+
+    @Column(name = "codigo_barras")
     private String codigoBarras;
-    private Pedido pedidoid;
+
+    @Column(name = "pedido_id")
+    private Integer pedidoid;
 
 }

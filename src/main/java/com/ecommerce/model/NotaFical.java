@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
@@ -17,7 +18,12 @@ public class NotaFical {
     @EqualsAndHashCode.Include
     @Id
     private Long id;
+
     private String xml;
+
+    @Column(name = "data_emissao")
     private Date dataEmissao;
-    private Pedido pedidoId;
+
+    @Column(name="pedido_id")
+    private Integer pedidoId;
 }
