@@ -1,4 +1,4 @@
-package com.ecommerce.iniciandocomjpa;
+package com.ecommerce;
 
 import com.ecommerce.model.Produto;
 import org.junit.Assert;
@@ -10,7 +10,7 @@ public class OperacaoComTransacaoTest extends EntityManagerTest {
     @Test
     public void inserindoOPrimeiroObjeto(){
         Produto produto = new Produto();
-        produto.setId(2);
+        produto.setId(2L);
         produto.setDescricao("A melhor imagem já vista");
         produto.setNome("Camera Canon");
         produto.setPreco(new BigDecimal(5000));

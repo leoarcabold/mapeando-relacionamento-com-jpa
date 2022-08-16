@@ -1,4 +1,4 @@
-package com.ecommerce.iniciandocomjpa;
+package com.ecommerce;
 
 import com.ecommerce.model.Produto;
 import org.junit.Assert;
