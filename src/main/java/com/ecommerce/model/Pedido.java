@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -17,8 +18,15 @@ public class Pedido {
 
     @EqualsAndHashCode.Include
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "pedido")
+    private List<ItemPedido> itens;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
@@ -26,11 +34,14 @@ public class Pedido {
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
-    @Enumerated(EnumType.STRING)
-    private StatusPedido status;
+    @Column(name = "nota_fiscal_id")
+    private Integer notaFiscalId;
 
     private BigDecimal total;
 
-    @Column(name = "nota_fiscal_id")
-    private Integer notaFiscalId;
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+
+    @Embedded
+    private EnderecoEntregaPedido enderecoEntrega;
 }

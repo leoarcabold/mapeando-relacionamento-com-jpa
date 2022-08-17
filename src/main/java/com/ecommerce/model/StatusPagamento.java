@@ -2,7 +2,7 @@ package com.ecommerce.model;
 
 public enum StatusPagamento {
 
-    PROCESSAMENTO,
+    PROCESSANDO,
     CANCELADO,
-    RECEBIDO;
+    RECEBIDO
 }
