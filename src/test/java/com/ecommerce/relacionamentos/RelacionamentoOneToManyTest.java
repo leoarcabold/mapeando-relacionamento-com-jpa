@@ -1,7 +1,6 @@
 package com.ecommerce.relacionamentos;
 
 import com.ecommerce.EntityManagerTest;
-import com.algaworks.ecommerce.model.*;
 import com.ecommerce.model.*;
 import org.junit.Assert;
 import org.junit.Test;
